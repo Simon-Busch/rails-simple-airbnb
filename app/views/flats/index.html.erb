@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+      <%= render 'header'%>
+  </div>
+  <div class="row">
+    <h2>All our Flats (<%= @flats.count%>)</h2>
+  </div>
+  <div class="row row-flat">
+  <% @flats.each do |flat| %>
+      <div class="col-4 flat-card">
+        <div class="flat-card-image">
+        </div>
+        <div class="flat-card-content">
+          <div class="flat-card-title">
+            <p> <%= flat.name%> </p>
+          </div>
+          <p><%=flat.description%></p>
+          <div class="flex flat-card-info">
+            <div class="flex">
+              <i class="fas fa-user-friends"></i>
+              <span><%= flat.number_of_guests%></span>
+              <i class="fas fa-dollar-sign"></i>
+              <span><%= flat.price_per_night%></span>
+            </div>
+          </div>
+        </div>
+        <div class="flat-card-actions">
+        <%= link_to  "Details", flat_path(flat) %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+      <%= render 'header'%>
+  </div>
+  <div class="row">
+    <div class="col-8 left-col">
+      <h4><%= @flat.name%></h4>
+      <p><%= @flat.address%></p>
+    </div>
+
+    <div class="col-4 right-col">
+      <h5>Book this place</h5>
+    </div>
+
+    <div class="col-8 left-col">
+      <h5>A bit more about this flat :</h5>
+      <p><%= @flat.description%></p>
+    </div>
+
+    <div class="col-8 left-col">
+      <h5>Details</h5>
+        <div class="flex flat-card-info">
+          <div class="flex">
+            <i class="fas fa-user-friends"></i>
+            <span><%= @flat.number_of_guests%></span>
+            <i class="fas fa-dollar-sign"></i>
+            <span><%= @flat.price_per_night%></span>
+          </div>
+        </div>
+    </div>
+
+
+
+  </div>
+  
+</div>
