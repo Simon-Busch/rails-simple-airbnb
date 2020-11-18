@@ -8,6 +8,21 @@ class FlatsController < ApplicationController
     # raise
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+    # raise
+  end
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to flats_path
+  end
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+
+    redirect_to flats_path
+  end
   def create
     @flat = Flat.new(flat_params)
     @flat.save
